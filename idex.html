@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Do you love me?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #ffe6ea;
+    }
+
+    #questionContainer {
+      position: relative;
+      display: inline-block;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #333;
+    }
+
+    button {
+      margin: 15px;
+      padding: 10px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #yesBtn {
+      background-color: #ff6b81;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #ccc;
+      color: black;
+      position: absolute;
+    }
+
+    #resultMessage {
+      font-size: 24px;
+      color: #e91e63;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="questionContainer">
+    <h2>Do you love me?</h2>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <div id="resultMessage"></div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const questionContainer = document.getElementById("questionContainer");
+    const resultMessage = document.getElementById("resultMessage");
+
+    // Di chuyển nút "No" khi rê chuột
+    noBtn.addEventListener("mouseover", () => {
+      const containerWidth = questionContainer.offsetWidth;
+      const containerHeight = questionContainer.offsetHeight;
+
+      const newX = Math.random() * (window.innerWidth - 100);
+      const newY = Math.random() * (window.innerHeight - 50);
+
+      noBtn.style.left = `${newX}px`;
+      noBtn.style.top = `${newY}px`;
+    });
+
+    // Khi bấm "Yes"
+    yesBtn.addEventListener("click", () => {
+      questionContainer.style.display = "none";
+      resultMessage.textContent = "anh dell yeu em❤️";
+    });
+  </script>
+
+</body>
+</html>
